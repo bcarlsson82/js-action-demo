@@ -1,22 +1,29 @@
-name: 'Action JS Template'
-description: 'A javascript Action template.'
-author: '@renan-alm'
+name: 'Action JS Template with Environment Variables'
+description: 'A JavaScript Action template that uses environment variables for configuration.'
+author: '@renan-alm' # Or your GitHub username
 
 branding:
-  # https://actions-cool.github.io/github-action-branding/
-  icon: 'file'
+  # Find more icons at https://feathericons.com/ and https://actions-cool.github.io/github-action-branding/
+  icon: 'message-square' # Changed to an icon that might better suit a greeting action
   color: 'blue'
 
-inputs:
-  user-name:
-    description: 'An example input'
-    required: true
-    default: 'Renan'
+# Inputs are no longer defined here as they are expected as environment variables
+# See the main script (e.g., index.js) for how process.env.USER_NAME and process.env.GREETING_FORMAT are used.
+# You would set these in your workflow file like so:
+# jobs:
+#   your_job:
+#     steps:
+#       - uses: your-action-repo@v1
+#         env:
+#           USER_NAME: "Your Name"
+#           GREETING_FORMAT: "Hello {name}, the time is {time}."
 
 outputs:
+  greeting:
+    description: 'The constructed greeting message.'
   time:
-    description: 'The time the action ran'
+    description: 'The time the action ran (from the script).'
 
 runs:
   using: 'node20'
-  main: 'dist/index.js'  # Changed from 'src/index.js'
+  main: 'dist/index.js' # This should point to your bundled JavaScript file
