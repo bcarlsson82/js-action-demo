@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+    
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/

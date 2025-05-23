@@ -1,0 +1,22 @@
+name: 'Action JS Template'
+description: 'A javascript Action template.'
+author: '@renan-alm'
+
+branding:
+  # https://actions-cool.github.io/github-action-branding/
+  icon: 'file'
+  color: 'blue'
+
+inputs:
+  user-name:
+    description: 'An example input'
+    required: true
+    default: 'Renan'
+
+outputs:
+  time:
+    description: 'The time the action ran'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'  # Changed from 'src/index.js'
